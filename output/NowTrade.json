@@ -1,0 +1,4969 @@
+{
+  "auditor": "quant-auditor v1.0",
+  "timestamp": "2026-06-12T17:31:05.892140+08:00",
+  "summary": {
+    "files": 49,
+    "total_findings": 663,
+    "critical": 107
+  },
+  "reports": [
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\setup.py",
+      "timestamp": "2026-06-12T17:31:05.778749+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\adx.py",
+      "timestamp": "2026-06-12T17:31:05.780738+08:00",
+      "score": {
+        "total": 57,
+        "max": 100,
+        "pct": 57,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\adx_mysql_custom.py",
+      "timestamp": "2026-06-12T17:31:05.781735+08:00",
+      "score": {
+        "total": 54,
+        "max": 100,
+        "pct": 54,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\crossover.py",
+      "timestamp": "2026-06-12T17:31:05.783733+08:00",
+      "score": {
+        "total": 53,
+        "max": 100,
+        "pct": 53,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\date_based_strategy.py",
+      "timestamp": "2026-06-12T17:31:05.783733+08:00",
+      "score": {
+        "total": 55,
+        "max": 100,
+        "pct": 55,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 1,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\double7.py",
+      "timestamp": "2026-06-12T17:31:05.784730+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\figures.py",
+      "timestamp": "2026-06-12T17:31:05.786722+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\neural_network.py",
+      "timestamp": "2026-06-12T17:31:05.787714+08:00",
+      "score": {
+        "total": 57,
+        "max": 100,
+        "pct": 57,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\random_forest.py",
+      "timestamp": "2026-06-12T17:31:05.789708+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\rsi_strategy.py",
+      "timestamp": "2026-06-12T17:31:05.790705+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\examples\\ultosc_strategy.py",
+      "timestamp": "2026-06-12T17:31:05.791706+08:00",
+      "score": {
+        "total": 55,
+        "max": 100,
+        "pct": 55,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 1,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\action.py",
+      "timestamp": "2026-06-12T17:31:05.792702+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\configuration.py",
+      "timestamp": "2026-06-12T17:31:05.794696+08:00",
+      "score": {
+        "total": 59,
+        "max": 100,
+        "pct": 59,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 3,
+        "high": 6,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\criteria.py",
+      "timestamp": "2026-06-12T17:31:05.804687+08:00",
+      "score": {
+        "total": 56,
+        "max": 100,
+        "pct": 56,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\criteria_group.py",
+      "timestamp": "2026-06-12T17:31:05.806002+08:00",
+      "score": {
+        "total": 54,
+        "max": 100,
+        "pct": 54,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\dataset.py",
+      "timestamp": "2026-06-12T17:31:05.808994+08:00",
+      "score": {
+        "total": 51,
+        "max": 100,
+        "pct": 51,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 8,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 15,
+            "rule_name": "future-func-survivorship",
+            "severity": "high",
+            "detail": "股票池未处理退市股票 — 幸存者偏差"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\data_connection.py",
+      "timestamp": "2026-06-12T17:31:05.816964+08:00",
+      "score": {
+        "total": 58,
+        "max": 100,
+        "pct": 58,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 11,
+        "critical": 1,
+        "high": 8,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 15,
+            "rule_name": "future-func-survivorship",
+            "severity": "high",
+            "detail": "股票池未处理退市股票 — 幸存者偏差"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\ensemble.py",
+      "timestamp": "2026-06-12T17:31:05.819954+08:00",
+      "score": {
+        "total": 57,
+        "max": 100,
+        "pct": 57,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\figures.py",
+      "timestamp": "2026-06-12T17:31:05.823940+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\logger.py",
+      "timestamp": "2026-06-12T17:31:05.826934+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\neural_network.py",
+      "timestamp": "2026-06-12T17:31:05.829920+08:00",
+      "score": {
+        "total": 60,
+        "max": 100,
+        "pct": 60,
+        "grade": "B"
+      },
+      "findings": {
+        "total": 11,
+        "critical": 0,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\notification.py",
+      "timestamp": "2026-06-12T17:31:05.830916+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\report.py",
+      "timestamp": "2026-06-12T17:31:05.838316+08:00",
+      "score": {
+        "total": 63,
+        "max": 100,
+        "pct": 63,
+        "grade": "B"
+      },
+      "findings": {
+        "total": 10,
+        "critical": 1,
+        "high": 5,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\strategy.py",
+      "timestamp": "2026-06-12T17:31:05.841305+08:00",
+      "score": {
+        "total": 63,
+        "max": 100,
+        "pct": 63,
+        "grade": "B"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 6,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\symbol_list.py",
+      "timestamp": "2026-06-12T17:31:05.842302+08:00",
+      "score": {
+        "total": 50,
+        "max": 100,
+        "pct": 50,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 3,
+        "high": 8,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 15,
+            "rule_name": "future-func-survivorship",
+            "severity": "high",
+            "detail": "股票池未处理退市股票 — 幸存者偏差"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\technical_indicator.py",
+      "timestamp": "2026-06-12T17:31:05.852273+08:00",
+      "score": {
+        "total": 59,
+        "max": 100,
+        "pct": 59,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 11,
+        "critical": 1,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\trade.py",
+      "timestamp": "2026-06-12T17:31:05.853270+08:00",
+      "score": {
+        "total": 58,
+        "max": 100,
+        "pct": 58,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 6,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\trading_amount.py",
+      "timestamp": "2026-06-12T17:31:05.855259+08:00",
+      "score": {
+        "total": 48,
+        "max": 100,
+        "pct": 48,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 8,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 19,
+            "rule_name": "risk-kelly-invalid",
+            "severity": "high",
+            "detail": "使用全凯利 — 应使用半凯利或更保守"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\trading_fee.py",
+      "timestamp": "2026-06-12T17:31:05.856255+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\trading_profile.py",
+      "timestamp": "2026-06-12T17:31:05.857252+08:00",
+      "score": {
+        "total": 58,
+        "max": 100,
+        "pct": 58,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 6,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\nowtrade\\__init__.py",
+      "timestamp": "2026-06-12T17:31:05.857252+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\scripts\\update_db.py",
+      "timestamp": "2026-06-12T17:31:05.858249+08:00",
+      "score": {
+        "total": 51,
+        "max": 100,
+        "pct": 51,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\scripts\\update_minute_currency_db.py",
+      "timestamp": "2026-06-12T17:31:05.859245+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\scripts\\update_minute_db.py",
+      "timestamp": "2026-06-12T17:31:05.860242+08:00",
+      "score": {
+        "total": 53,
+        "max": 100,
+        "pct": 53,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\scripts\\update_oanda_currency.py",
+      "timestamp": "2026-06-12T17:31:05.861238+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\testing_data.py",
+      "timestamp": "2026-06-12T17:31:05.863232+08:00",
+      "score": {
+        "total": 51,
+        "max": 100,
+        "pct": 51,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_action.py",
+      "timestamp": "2026-06-12T17:31:05.866222+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_criteria.py",
+      "timestamp": "2026-06-12T17:31:05.872202+08:00",
+      "score": {
+        "total": 54,
+        "max": 100,
+        "pct": 54,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_criteria_group.py",
+      "timestamp": "2026-06-12T17:31:05.873205+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_dataset.py",
+      "timestamp": "2026-06-12T17:31:05.874200+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_data_connection.py",
+      "timestamp": "2026-06-12T17:31:05.876193+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_logger.py",
+      "timestamp": "2026-06-12T17:31:05.876193+08:00",
+      "score": {
+        "total": 49,
+        "max": 100,
+        "pct": 49,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_notification.py",
+      "timestamp": "2026-06-12T17:31:05.877186+08:00",
+      "score": {
+        "total": 46,
+        "max": 100,
+        "pct": 46,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 16,
+        "critical": 4,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_strategy.py",
+      "timestamp": "2026-06-12T17:31:05.884166+08:00",
+      "score": {
+        "total": 62,
+        "max": 100,
+        "pct": 62,
+        "grade": "B"
+      },
+      "findings": {
+        "total": 10,
+        "critical": 2,
+        "high": 5,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 13,
+            "rule_name": "future-func-no-shift",
+            "severity": "critical",
+            "detail": "技术指标计算可能缺少 shift(1) — 未来函数泄漏"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_symbol_list.py",
+      "timestamp": "2026-06-12T17:31:05.885162+08:00",
+      "score": {
+        "total": 48,
+        "max": 100,
+        "pct": 48,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 15,
+        "critical": 3,
+        "high": 8,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 15,
+            "rule_name": "future-func-survivorship",
+            "severity": "high",
+            "detail": "股票池未处理退市股票 — 幸存者偏差"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_technical_indicators.py",
+      "timestamp": "2026-06-12T17:31:05.890141+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_trade.py",
+      "timestamp": "2026-06-12T17:31:05.891144+08:00",
+      "score": {
+        "total": 58,
+        "max": 100,
+        "pct": 58,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 12,
+        "critical": 1,
+        "high": 6,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_trading_amount.py",
+      "timestamp": "2026-06-12T17:31:05.892140+08:00",
+      "score": {
+        "total": 46,
+        "max": 100,
+        "pct": 46,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 16,
+        "critical": 3,
+        "high": 8,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 19,
+            "rule_name": "risk-kelly-invalid",
+            "severity": "high",
+            "detail": "使用全凯利 — 应使用半凯利或更保守"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    },
+    {
+      "file": "C:/Users/ADMINI~1/AppData/Local/Temp/NowTrade\\tests\\test_trading_fee.py",
+      "timestamp": "2026-06-12T17:31:05.892140+08:00",
+      "score": {
+        "total": 52,
+        "max": 100,
+        "pct": 52,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 14,
+        "critical": 2,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 16,
+            "rule_name": "risk-no-stop-loss",
+            "severity": "critical",
+            "detail": "策略缺少止损机制 — 单次大亏可能致命"
+          },
+          {
+            "rule_id": 17,
+            "rule_name": "risk-position-size-missing",
+            "severity": "high",
+            "detail": "缺少仓位管理 — 可能全仓进出"
+          },
+          {
+            "rule_id": 20,
+            "rule_name": "risk-var-missing",
+            "severity": "medium",
+            "detail": "缺少 VaR 风险度量 — 不知道极端损失"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 27,
+            "rule_name": "bt-no-market-regime",
+            "severity": "medium",
+            "detail": "未按牛/熊/震荡市分段 — 策略在不同环境下表现未知"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    }
+  ]
+}
