@@ -1,0 +1,109 @@
+{
+  "auditor": "quant-auditor v1.0",
+  "timestamp": "2026-06-14T12:46:34.172780+08:00",
+  "summary": {
+    "files": 1,
+    "total_findings": 13,
+    "critical": 3
+  },
+  "reports": [
+    {
+      "file": "C:/Users/Administrator/AppData/Local/Temp/quant-stock-bot\\stockbot.py",
+      "timestamp": "2026-06-14T12:46:34.171785+08:00",
+      "score": {
+        "total": 53,
+        "max": 100,
+        "pct": 53,
+        "grade": "C"
+      },
+      "findings": {
+        "total": 13,
+        "critical": 3,
+        "high": 7,
+        "details": [
+          {
+            "rule_id": 3,
+            "rule_name": "overfit-no-out-sample",
+            "severity": "critical",
+            "detail": "策略缺少样本外测试 — 无法验证泛化能力"
+          },
+          {
+            "rule_id": 8,
+            "rule_name": "overfit-no-sensitivity",
+            "severity": "high",
+            "detail": "策略缺少参数敏感性分析 — 不知道参数稳定性"
+          },
+          {
+            "rule_id": 9,
+            "rule_name": "overfit-monte-carlo-missing",
+            "severity": "medium",
+            "detail": "缺少蒙特卡洛/自举法验证 — 回报分布不确定"
+          },
+          {
+            "rule_id": 11,
+            "rule_name": "future-func-today-close",
+            "severity": "critical",
+            "detail": "可能使用未来数据 — 当日收盘价做当日决策"
+          },
+          {
+            "rule_id": 19,
+            "rule_name": "risk-kelly-invalid",
+            "severity": "high",
+            "detail": "使用全凯利 — 应使用半凯利或更保守"
+          },
+          {
+            "rule_id": 21,
+            "rule_name": "risk-diversification-missing",
+            "severity": "medium",
+            "detail": "单一标的策略 — 集中度风险高"
+          },
+          {
+            "rule_id": 22,
+            "rule_name": "risk-black-swan-ignore",
+            "severity": "high",
+            "detail": "未考虑极端事件影响 — 尾部风险敞口未知"
+          },
+          {
+            "rule_id": 24,
+            "rule_name": "bt-no-cost-model",
+            "severity": "critical",
+            "detail": "回测无交易成本 — 实盘收益会大幅缩水"
+          },
+          {
+            "rule_id": 25,
+            "rule_name": "bt-no-slippage",
+            "severity": "high",
+            "detail": "无滑点建模 — 大单成交价与回测偏差大"
+          },
+          {
+            "rule_id": 26,
+            "rule_name": "bt-no-benchmark",
+            "severity": "high",
+            "detail": "缺少基准比较 — 策略收益可能不如 buy-and-hold"
+          },
+          {
+            "rule_id": 28,
+            "rule_name": "bt-no-walk-forward",
+            "severity": "high",
+            "detail": "缺少滚动窗口验证 — 参数随时间退化未知"
+          },
+          {
+            "rule_id": 29,
+            "rule_name": "prod-no-execution-model",
+            "severity": "high",
+            "detail": "无限价单建模 — 回测成交价与实盘偏差大"
+          },
+          {
+            "rule_id": 30,
+            "rule_name": "prod-no-live-monitoring",
+            "severity": "medium",
+            "detail": "缺少实盘监控 — 策略异常无法及时发现"
+          }
+        ]
+      },
+      "meta": {
+        "elapsed_s": 0.0
+      }
+    }
+  ]
+}
