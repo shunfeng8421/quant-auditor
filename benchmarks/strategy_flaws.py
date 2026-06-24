@@ -101,3 +101,34 @@ def survivorship_biased(symbols=['AAPL','MSFT','GOOGL','NVDA','META']):
     # What about 90% of crypto tokens that went to zero?
     # VULNERABILITY: picking survivors makes any strategy look good
     return "Strategy tested only on survivors — results inflated"
+
+
+__all__ = [
+    "lookahead_biased_strategy", "lookahead_fixed_strategy",
+    "nocost_strategy", "cost_aware_strategy",
+    "overfit_strategy", "no_stoploss_strategy",
+    "survivorship_biased"
+]
+
+
+def run_benchmarks():
+    """Run all benchmark strategies for validation"""
+    import numpy as np
+    dates = pd.date_range('2015-01-01', '2025-12-31', freq='B')
+    df = pd.DataFrame({
+        'close': np.exp(np.cumsum(np.random.randn(len(dates)) * 0.01)) * 100
+    }, index=dates)
+    
+    strategies = [
+        ("lookahead_biased", lookahead_biased_strategy(df.copy())),
+        ("lookahead_fixed", lookahead_fixed_strategy(df.copy())),
+        ("nocost", nocost_strategy(df.copy())),
+        ("cost_aware", cost_aware_strategy(df.copy())),
+        ("overfit", overfit_strategy(df.copy())),
+        ("no_stoploss", no_stoploss_strategy(df.copy())),
+    ]
+    for name, result in strategies:
+        print(f"  {name:25s}: final={result.iloc[-1]:.2f}")
+    
+if __name__ == "__main__":
+    run_benchmarks()
